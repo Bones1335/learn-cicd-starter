@@ -27,7 +27,7 @@ jobs:
             - name: auth
               uses: google-github-actions/auth@v2
               with:
-                credentials: ${{ secrets.GCP_CREDENTIALS }}
+                credentials_json: ${{ secrets.GCP_CREDENTIALS }}
             
             - name: Buld Docker Image
               run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-456504/notely-ar-repo/notely:latest .
