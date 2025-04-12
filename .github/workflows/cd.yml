@@ -29,5 +29,11 @@ jobs:
               with:
                 credentials_json: ${{ secrets.GCP_CREDENTIALS }}
             
+            - name: Set up Cloud SDK
+              uses: google-github-actions/setup-gcloud@v2
+
+            - name: Use gCloud CLI
+              run: gCloud info
+
             - name: Buld Docker Image
               run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-456504/notely-ar-repo/notely:latest .
